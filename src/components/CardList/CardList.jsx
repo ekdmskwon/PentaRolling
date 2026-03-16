@@ -1,22 +1,7 @@
 import Avatar from "../common/Avatar/Avatar";
 import EmojiBadge from "../common/EmojiBadge/EmojiBadge";
+import { CARD_BACKGROUND_COLORS } from "../../constants/backgroundColors";
 import * as S from "./CardListStyle";
-
-/**
- * 롤링페이퍼 카드 공통 컴포넌트
- *
- * - 배경색 또는 배경 이미지를 통해 카드 스타일 변경
- * - 상단: 받는 사람 이름 + 아바타 목록
- * - 본문: "n명이 작성했어요!" 문구 (작성자가 0명일 때 "아직 작성된 메시지가 없어요." 문구 출력)
- * - 하단: 이모지 뱃지 카운트
- */
-
-const BACKGROUND_COLORS = {
-  beige: "#FFE2AD",
-  purple: "#ECD9FF",
-  blue: "#B1E4FF",
-  green: "#D0F5C3",
-};
 
 const CardList = ({
   recipientName,
@@ -32,7 +17,7 @@ const CardList = ({
   const showExtraCount = extraCount > 0;
 
   const themeColor =
-    BACKGROUND_COLORS[backgroundColor] || BACKGROUND_COLORS.beige;
+    CARD_BACKGROUND_COLORS[backgroundColor] || CARD_BACKGROUND_COLORS.beige;
 
   return (
     <S.CardContainer
